@@ -6,7 +6,6 @@
     cache_valid_time: "{{ apt_cache_valid_time }}"
     name:
       - dirmngr
-    state: present
 
 - name: git PPA repo
   become: true
@@ -21,4 +20,3 @@
     cache_valid_time: "{{ apt_cache_valid_time }}"
     name:
       - git
-    state: present
