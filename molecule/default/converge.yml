@@ -1,7 +1,10 @@
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
+  gather_facts: true
+  vars:
+    git_name: Jane Doe
+    git_email: jane@example.com
   tasks:
     - name: "Include mtik00.git"
       ansible.builtin.include_role:

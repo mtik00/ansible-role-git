@@ -1,1 +1,5 @@
 ---
+apt_cache_valid_time: 3600
+git_signing_key: ""
+env_d_mode: '0770'
+env_files_path: "{{ ansible_user_dir }}/.env-files.d"

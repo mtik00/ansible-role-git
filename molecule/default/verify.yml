@@ -3,7 +3,10 @@
 
 - name: Verify
   hosts: all
-  gather_facts: false
+  gather_facts: true
+  vars:
+    git_name: Jane Doe
+    git_email: jane@example.com
   tasks:
     - name: Example assertion
       ansible.builtin.assert:

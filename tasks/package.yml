@@ -1,0 +1,24 @@
+---
+
+- name: install dirmngr for ppa
+  become: true
+  ansible.builtin.apt:
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+    name:
+      - dirmngr
+    state: present
+
+- name: git PPA repo
+  become: true
+  ansible.builtin.apt_repository:
+    repo: ppa:git-core/ppa
+    codename: "{{ ansible_lsb.codename }}"
+    state: present
+
+- name: git package
+  become: true
+  ansible.builtin.apt:
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+    name:
+      - git
+    state: present
